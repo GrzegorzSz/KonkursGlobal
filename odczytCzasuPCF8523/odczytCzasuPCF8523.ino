@@ -40,11 +40,7 @@ public:
 		zformatowanyCzas += (addZeroToSmallValue(teraz.second()));
 		return zformatowanyCzas;
 	}
-	ObecnyCzas()
-	{
 
-		Serial.println("KOnstruktor...");
-	}
 	boolean begin()
 	{
 		return rtc.begin();
