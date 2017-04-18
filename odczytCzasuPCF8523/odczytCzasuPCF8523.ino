@@ -1,14 +1,18 @@
 #include "Arduino.h"
 #include "RTClib.h"
 #include "Wire.h"
+#include "SD.h"
+#include "UTFT.h"
 
 char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
-class ObecnyCzas
+class ClockManager
 {
 private:
 	RTC_PCF8523 rtc;
-	String addZeroToSmallValue(uint8_t wartosc)
+	DateTime timePoint;
+	boolean begined, initial;
+	String addLeadZero(uint8_t wartosc)
 	{
 		String liczba = "";
 		if (wartosc < 10)
@@ -20,38 +24,86 @@ private:
 	}
 
 public:
-	String DataGodzina(void)
+	DateTime getTimeObject()
 	{
-		DateTime teraz = rtc.now();
+		return timePoint;
+	}
+	String getTimeString()
+	{
+		timePoint = rtc.now();
 		String zformatowanyCzas = "";
 
-		zformatowanyCzas += teraz.year();
+		zformatowanyCzas += timePoint.year();
 		zformatowanyCzas += ".";
-		zformatowanyCzas += addZeroToSmallValue(teraz.month());
+		zformatowanyCzas += addLeadZero(timePoint.month());
 		zformatowanyCzas += ".";
-		zformatowanyCzas += addZeroToSmallValue(teraz.day());
+		zformatowanyCzas += addLeadZero(timePoint.day());
 		zformatowanyCzas += ";";
-		zformatowanyCzas += daysOfTheWeek[teraz.dayOfTheWeek()];
+		zformatowanyCzas += daysOfTheWeek[timePoint.dayOfTheWeek()];
 		zformatowanyCzas += ";";
-		zformatowanyCzas += addZeroToSmallValue(teraz.hour());
+		zformatowanyCzas += addLeadZero(timePoint.hour());
 		zformatowanyCzas += ":";
-		zformatowanyCzas += addZeroToSmallValue(teraz.minute());
+		zformatowanyCzas += addLeadZero(timePoint.minute());
 		zformatowanyCzas += ":";
-		zformatowanyCzas += (addZeroToSmallValue(teraz.second()));
+		zformatowanyCzas += (addLeadZero(timePoint.second()));
 		return zformatowanyCzas;
+	}
+	ClockManager()
+	{
+		begined = rtc.begin();
+		initial = rtc.initialized();
+		timePoint = rtc.now();
 	}
 
 	boolean begin()
 	{
-		return rtc.begin();
+		return begined;
 	}
 	boolean initialized()
 	{
-		return rtc.initialized();
+		return initial;
 	}
 };
+class SDCardManager : SDClass
+{
+private:
+	boolean initial;
+	File root;
+public:
+	void checkForRequestedDirs(String fileNamesTable[])
+	{
+		for(unsigned int indeks=0; indeks < fileNamesTable->length(); indeks++)
+		{
+			if(fileNamesTable[indeks].equals("empl.txt"))
+			{
+				if(! SD.exists(fileNamesTable[indeks]))
+				{
+					Serial.println("Brak spisu pracowników");
+				}
+			} else if (! SD.exists(fileNamesTable[indeks]))
+			{
+				File file = SD.open(fileNamesTable[indeks], FILE_WRITE);
+				file.close();
+			}
+		}
+	}
+	SDCardManager()
+	{
+		initial = SD.begin();
+		root = SD.open("/");
 
-ObecnyCzas obecnyCzas;
+	}
+	boolean initialized()
+	{
+		return initial;
+	}
+
+};
+
+ClockManager *clockMan;
+SDCardManager *cardMan;
+UTFT screen(ILI9481,38,39,40,41);
+extern uint8_t BigFont[];
 
 void setup () {
 
@@ -59,20 +111,34 @@ void setup () {
     delay(1);  // for Leonardo/Micro/Zero
   }
   Serial.begin(9600);
-  if(! obecnyCzas.begin())
+  clockMan = new ClockManager;
+  if(! clockMan->begin())
   {
 	  Serial.println("Nie znaleziono zegara RTC");
   }
-  if(!obecnyCzas.initialized())
+  if(!clockMan->initialized())
   {
 	  Serial.println("Zegar nie pracuje");
   }
   //rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  Serial.println("setup...");
+
+  cardMan = new SDCardManager;
+  if(! cardMan->initialized())
+  {
+	  Serial.println("Czytnik kart SD nie pracuje");
+  }
+
+  screen.InitLCD();
+  screen.clrScr();
+  screen.setColor(0,0,0);
+  screen.setFont(BigFont);
+  screen.print("ekran OK", LEFT, 20);
+  Serial.println("setup done.");
+  delay(1000);
 }
 
 void loop () {
-	Serial.println(obecnyCzas.DataGodzina());
+	Serial.println(clockMan->getTimeString());
     Serial.println();
     delay(3000);
 }
