@@ -24,6 +24,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/Wire/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/RTClib-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SD}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SD/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SPI/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/UTFT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/RFID}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.cpp.sketch.input.2133913986" name="CPP source files" superClass="it.baeyens.arduino.compiler.cpp.sketch.input"/>
 							</tool>
@@ -34,6 +40,12 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/Wire}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/Wire/src}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/RTClib-master}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SD}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SD/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SPI}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/libraries/SPI/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/UTFT}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/odczytCzasuPCF8523/RFID}&quot;"/>
 								</option>
 								<inputType id="it.baeyens.arduino.compiler.c.sketch.input.610822300" name="C Source Files" superClass="it.baeyens.arduino.compiler.c.sketch.input"/>
 							</tool>
@@ -59,4 +71,5 @@
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

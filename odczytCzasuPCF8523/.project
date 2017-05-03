@@ -32,9 +32,19 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>RFID</name>
+			<type>2</type>
+			<location>/home/yolf/Pobrane/libraries/RFID</location>
+		</link>
+		<link>
 			<name>RTClib-master</name>
 			<type>2</type>
 			<location>/home/yolf/Pobrane/libraries/RTClib-master</location>
+		</link>
+		<link>
+			<name>UTFT</name>
+			<type>2</type>
+			<location>/home/yolf/Pobrane/arduino-1.6.11/libraries/UTFT</location>
 		</link>
 		<link>
 			<name>core/core</name>
@@ -45,6 +55,16 @@
 			<name>core/variant</name>
 			<type>2</type>
 			<location>/home/yolf/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.13/variants/mega</location>
+		</link>
+		<link>
+			<name>libraries/SD</name>
+			<type>2</type>
+			<location>/home/yolf/eclipse/arduinoPlugin/libraries/SD/1.0.6</location>
+		</link>
+		<link>
+			<name>libraries/SPI</name>
+			<type>2</type>
+			<location>/home/yolf/eclipse/arduinoPlugin/packages/arduino/hardware/avr/1.6.13/libraries/SPI</location>
 		</link>
 		<link>
 			<name>libraries/Wire</name>

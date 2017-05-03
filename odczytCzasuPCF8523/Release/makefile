@@ -11,7 +11,69 @@ RM := rm -f
 -include subdir.mk
 -include libraries/Wire/src/utility/subdir.mk
 -include libraries/Wire/src/subdir.mk
+-include libraries/SPI/src/subdir.mk
+-include libraries/SD/src/utility/subdir.mk
+-include libraries/SD/src/subdir.mk
 -include core/core/subdir.mk
+-include UTFT/examples/chipKit/UTFT_ViewFont/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Textrotation_Demo/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Rotate_Bitmap/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_800x480/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_480x320/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_480x272/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_400x240/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_320x240_Serial/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_320x240/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_220x176_Serial/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_220x176/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_160x128_Serial/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Demo_128x128_Serial/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Bitmap_128x128/subdir.mk
+-include UTFT/examples/chipKit/UTFT_Bitmap/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_ViewFont/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Textrotation_Demo/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Rotate_Bitmap/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_480x320/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_400x240/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_320x240/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_220x176_Serial/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_220x176/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Demo_160x128_Serial/subdir.mk
+-include UTFT/examples/TI\ LaunchPads\ (Energia)/UTFT_Bitmap/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_ViewFont/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Textrotation_Demo/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Rotate_Bitmap/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Leonardo_Demo_320x240/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_800x480/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_480x320/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_480x272/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_400x240/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_320x240_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_320x240/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_220x176_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_220x176/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_160x128_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Demo_128x128_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_CPLD_PageSwitching/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Bitmap_128x128/subdir.mk
+-include UTFT/examples/Arduino\ (AVR)/UTFT_Bitmap/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_ViewFont/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Textrotation_Demo/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Rotate_Bitmap/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_800x480/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_480x320/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_480x272/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_400x240/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_320x240_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_320x240/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_220x176_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_220x176/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_160x128_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Demo_128x128_Serial/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_CPLD_PageSwitching/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Bitmap_128x128/subdir.mk
+-include UTFT/examples/Arduino\ (ARM)\ +\ Teensy/UTFT_Bitmap/subdir.mk
+-include UTFT/subdir.mk
 -include RTClib-master/examples/softrtc/subdir.mk
 -include RTClib-master/examples/pcf8523/subdir.mk
 -include RTClib-master/examples/ds3231/subdir.mk
@@ -20,6 +82,7 @@ RM := rm -f
 -include RTClib-master/examples/ds1307/subdir.mk
 -include RTClib-master/examples/datecalc/subdir.mk
 -include RTClib-master/subdir.mk
+-include RFID/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
