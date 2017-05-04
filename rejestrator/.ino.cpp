@@ -2,7 +2,7 @@
 //This is a automatic generated file
 //Please do not modify this file
 //If you touch this file your change will be overwritten during the next build
-//This file has been generated on 2017-05-04 22:14:59
+//This file has been generated on 2017-05-04 22:05:32
 
 #include "Arduino.h"
 #include "Arduino.h"
@@ -14,7 +14,7 @@
 void setup () ;
 void loop () ;
 
-#include "odczytCzasuPCF8523.ino"
+#include "rejestrator.ino"
 
 
 #endif
